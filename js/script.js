@@ -28,7 +28,7 @@ Barbara Ramos |	Graphic Designer     |	barbara-ramos-graphic-designer.jpg  */
 
 
 const cards = document.getElementById('cards');
-//Creare l’array di oggetti con le informazioni fornite (bonus 2)
+//organizzo i singoli membri (bonus 2)
 const teamMembers = [
     {
         Name:"Wayne Barnett",
@@ -61,4 +61,22 @@ const teamMembers = [
         Img: `img/barbara-ramos-graphic-designer.jpg`,
     },
 ];
-console.log (teamMembers)
+ //Stampare su console e Dom le informazioni di nome, ruolo e la stringa della foto
+for (let i = 0; i < teamMembers.length; i++){
+    console.log (teamMembers[i])
+
+    //creo la card
+    const badge = document.createElement('div');
+        badge.classList.add('col-3', 'm-4', 'text-center');
+        badge.innerHTML = 
+            `
+                <img src="${teamMembers[i].Img}"class="card-img-top" alt="img">
+                <div class="card-body bg-white">
+                <p class = "card-text pt-3 m-0">${teamMembers[i].Name }</p>
+                <p class = "card-text pb-4 m-0 font-sz"> ${teamMembers[i].Role}</p>
+                </div>
+            `
+        cards.append(badge);
+    };
+    
+    console.log(teamMembers);
